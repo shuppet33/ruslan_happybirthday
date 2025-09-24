@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="reset.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+
+        body {
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+
+            background: #AEC244;
+
+
+            color: #262626;
+            font-family: "Tiny5", sans-serif;
+
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .error {
+            border: 5px solid #e46262 !important;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(25, 39, 60, 0.64);
+            z-index: 10;
+        }
+
+        .box {
+            position: absolute;
+            background: #fff;
+            border: 5px solid #262626;
+
+            z-index: 15;
+        }
+
+
+        .box__content__close-wrapper {
+            display: flex;
+            justify-content: end;
+
+            .close {
+                background: #e35151;
+                border: 5px solid #883434;
+                width: 30px;
+                height: 30px;
+
+            }
+
+            .close:hover {
+                background: #7a1d1d;
+                border: 5px solid #512525;
+                color: #fff;
+            }
+
+            .close:active {
+                transform: translateY(-6px);
+            }
+        }
+
+
+        .box__content {
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 20px;
+
+            background: #e1dfcc;
+
+            width: 500px;
+            min-height: 350px;
+        }
+
+        .box__content__img {
+            max-width: 300px;
+            max-height: 300px;
+
+            img {
+                object-fit: cover;
+            }
+
+            object-fit: cover;
+        }
+
+        .box__content__text {
+
+        }
+
+        .box__content__check {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            input {
+                width: 100%;
+                padding: 10px;
+                font-size: 20px;
+
+                border: 5px solid #A2B5B4;
+                background: #fff;
+            }
+
+            input:focus {
+                border: 5px solid #889a99;
+            }
+
+
+            button {
+                background: #EDBF6A;
+                border: 5px solid #BF8D51;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                padding: 10px;
+            }
+
+            button:active {
+                transform: translateY(-5px);
+            }
+        }
+
+        .next-array {
+            position: absolute;
+            right: -60px;
+            bottom: 40%;
+            background: #fff;
+            padding: 10px;
+        }
+
+        .video-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div id="overlay" class="overlay"></div>
+
+<div id="secret" class="box hidden">
+    <div class="box__content">
+
+        <div class="box__content__close-wrapper">
+            <button class="close">x</button>
+        </div>
+
+        <div class="box__content__text">
+            <div class="video-wrapper">
+                <video id="video" src="video/1.mp4" controls height="400px"></video>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="instructions" class="box">
+    <div class="box__content">
+
+        <div class="next-array hidden">--></div>
+
+        <div class="box__content__close-wrapper">
+            <button class="close">x</button>
+        </div>
+
+        <div class="box__content__text">
+            Добро пожаловать в КВЕСТ. <br><br>
+
+            Правила просты: <br><br>
+            Движение — стрелочками ⬆️ ⬇️ ⬅️ ➡️ <br><br>
+
+            Взаимодействие — клавиша E <br><br>
+
+            Важно! Если закрыть модалку — открыть ее второй раз не получится. Сначала ознакомься с содержимым — потом закрывай. <br><br>
+
+            Твоя задача: пройти все сундуки. Каждый сундук содержит задание. Если ты не выполнишь все задания, в конце
+            не получишь кодовое слово.
+            <br><br>
+
+            А без кодового слова подарка тебе не видать. Преподаватель знает правила и на «а можно без этого?» не
+            поведётся.
+            <br><br>
+
+            Так что приготовься: впереди сундуки, задачи и немного страданий.
+        </div>
+
+        <div class="box__content__img">
+            <img src="">
+        </div>
+
+    </div>
+</div>
+
+
+<div id="box1" class="hidden box">
+    <div class="box__content">
+
+        <div class="next-array hidden">--></div>
+
+        <div class="box__content__close-wrapper">
+            <button class="close hidden">x</button>
+        </div>
+
+        <div class="box__content__text">
+
+        </div>
+
+        <div class="box__content__img">
+            <img src="">
+        </div>
+
+        <div class="box__content__check">
+            Ответ:
+            <input type="text">
+            <button class="check">Проверить</button>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="box2" class="hidden box">
+    <div class="box__content">
+
+        <div class="next-array hidden">--></div>
+
+        <div class="box__content__close-wrapper">
+            <button class="close hidden">x</button>
+        </div>
+
+        <div class="box__content__text">
+
+        </div>
+
+        <div class="box__content__img">
+            <img src="">
+        </div>
+
+        <div class="box__content__check">
+            <input type="text">
+            <button class="check">Проверить</button>
+        </div>
+
+    </div>
+</div>
+
+<div id="box3" class="hidden box">
+    <div class="box__content">
+
+        <div class="next-array hidden">--></div>
+
+        <div class="box__content__close-wrapper">
+            <button class="close hidden">x</button>
+        </div>
+
+        <div class="box__content__text">
+
+        </div>
+
+        <div class="box__content__img">
+            <img src="">
+        </div>
+
+        <div class="box__content__check">
+            <input type="text">
+            <button class="check">Проверить</button>
+        </div>
+
+    </div>
+</div>
+
+
+<canvas id="board"></canvas>
+
+<script type="module" src="modalGame.js"></script>
+<script type="module" src="state.js"></script>
+<script type="module" src="index.js"></script>
+
+</body>
+</html>
