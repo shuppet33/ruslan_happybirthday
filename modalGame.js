@@ -67,13 +67,13 @@ export const taskBox = {
         {
             text: 'Задача 1 — Строка: фильтрация символов. Нужно удалить из строки все не-буквенные символы, привести к нижнему регистру и вернуть склеенную строку букв. <br> <br> <span style="color: blue">function <span style="color: red">decodeStringFilterLetters <span style="color: black">( input: <span style="color: orange">string</span>) <span style="color: orange">string</span></span></span></span> <br> <br> Входные данные: <br> <br> <span style="color: blue"> const <span style="color: black"> data = <span style="color: green">"H1a2p3p4y5B6i7r8t9h0d1a2y"</span></span></span>',
             img: '',
-            answer: 'happybirthday',
+            answer: '1', // happybirthday
             state: false
         },
         {
             text: 'Задача 2. Объект — сортировка и фильтр. Напиши функцию <span style="color: blue">decodeObject ( data )</span>, которая принимает объект, где ключи — это слова, а значения — числа. Нужно вернуть массив, содержащий только числа больше 2, в порядке добавления. <br> <br> Входные данные: <br> <br> <span style="color: blue">const <span style="color: black"> data = \{ <span style="color: red">first</span>: <span style="color: red">3</span>, <span style="color: red">second</span>: <span style="color: red">5</span>, <span style="color: red">third</span>: <span style="color: red">1</span>, <span style="color: red">fourth</span>: <span style="color: red">0</span>  \} </span></span>',
             img: '',
-            answer: '[3,5]', //[3,5]
+            answer: '1', //[3,5]
             state: false
         },
         {
@@ -82,7 +82,7 @@ export const taskBox = {
                 '<br> <br>' +
                 '<span style="color: blue">const <span style="color: black"> data = </span> <span style="color: green"> "kulwkdubfli" </span></span>',
             img: '',
-            answer: 'birthdaygift', // birthdaygift
+            answer: '1', // birthdaygift
             state: false
         },
         {
@@ -95,7 +95,7 @@ export const taskBox = {
                 '<span style="color: red">phrase2</span> \{ <span style="color: red">text</span>: <span style="color: green">"rw wdegb"</span>, <span style="color: red">weight</span>: <span style="color: red">2</span> \}, <br>' +
                 ' \} </span></span>',
             img: '',
-            answer: '["у меня","от тебя","руки трясутся"]', // ["у меня","от тебя","руки трясутся"]
+            answer: '["уменя","оттебя","рукитрясутся"]', // ["у меня","от тебя","руки трясутся"]
             state: false
         },
         {
@@ -146,12 +146,12 @@ export function modalGame(box) {
     checkButton.addEventListener('click', (e) => {
         const task = taskBox[box.name][currentTask]
 
-        if (input.value.replace(/\s/g, '') === task.answer) {
+        if (input.value.replace(/\s/g, "") === task.answer) {
             task.state = true
             nextButton.classList.remove('hidden')
         } else {
             input.classList.add('error')
-            setTimeout(() => input.classList.remove('error'), 3000)
+            setTimeout(() => input.classList.remove('error'), 2500)
         }
     })
 
